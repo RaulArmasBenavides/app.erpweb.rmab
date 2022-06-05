@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 
-namespace AppMVC07.Service
+namespace app.erpweb.rmab.Service
 {
     public interface ICrudDao<T>
     {

@@ -1,7 +1,7 @@
 ﻿
 using System.Configuration;
 
-namespace AppMVC07.DataBase
+namespace app.erpweb.rmab.DataBase
 {
     public class AccesoDB
     {

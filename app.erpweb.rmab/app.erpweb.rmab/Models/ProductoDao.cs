@@ -1,5 +1,5 @@
-﻿using AppMVC07.Entity;
-using AppMVC07.Service;
+﻿using app.erpweb.rmab.Entity;
+using app.erpweb.rmab.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace AppMVC07.Models
+namespace app.erpweb.rmab.Models
 {
     public class ProductoDao : ICrudDao<Producto>
     {

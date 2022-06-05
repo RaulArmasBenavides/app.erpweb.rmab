@@ -1,12 +1,12 @@
-﻿using AppMVC07.Bussines;
-using AppMVC07.Entity;
+﻿using app.erpweb.rmab.Bussines;
+using app.erpweb.rmab.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace AppMVC07.Controllers
+namespace app.erpweb.rmab.Controllers
 {
     public class ProductosController : Controller
     {

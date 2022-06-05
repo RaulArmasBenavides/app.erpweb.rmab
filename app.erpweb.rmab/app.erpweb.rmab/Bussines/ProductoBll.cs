@@ -1,6 +1,6 @@
-﻿using AppMVC07.DataBase;
-using AppMVC07.Entity;
-using AppMVC07.Models;
+﻿using app.erpweb.rmab.DataBase;
+using app.erpweb.rmab.Entity;
+using app.erpweb.rmab.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace AppMVC07.Bussines
+namespace app.erpweb.rmab.Bussines
 {
     public class ProductoBll : AccesoDB
     {      

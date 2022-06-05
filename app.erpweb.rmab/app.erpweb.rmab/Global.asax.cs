@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace AppMVC07
+namespace app.erpweb.rmab
 {
     public class MvcApplication : System.Web.HttpApplication
     {

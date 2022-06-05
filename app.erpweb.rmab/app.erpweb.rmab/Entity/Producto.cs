@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppMVC07.Entity
+namespace app.erpweb.rmab.Entity
 {
     public class Producto
     {
