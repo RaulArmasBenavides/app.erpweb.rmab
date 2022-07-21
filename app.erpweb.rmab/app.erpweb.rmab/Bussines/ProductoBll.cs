@@ -8,11 +8,42 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using app.erpweb.rmab.Service;
 
 namespace app.erpweb.rmab.Bussines
 {
     public class ProductoBll : AccesoDB
-    {      
+    {
+       
+       IProductoDataAccess _ProductDataAccess;
+
+
+        public ProductoBll()
+        {
+            _ProductDataAccess = DataAccessFactory.GetProductDataAccessObj2();
+        }
+
+
+        public List<Producto> ProductoListar2()
+        {
+
+            using (var cn = new SqlConnection(CadenaConexion))
+            {
+                ProductoDao dao = null;
+                try
+                {
+                    dao = new ProductoDao();
+                    cn.Open();
+                    return _ProductDataAccess.readAll(cn);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }//cn.close()
+        
+        }
+
        public List<Producto> ProductoListar()
         {
             List<Producto> lista = null;

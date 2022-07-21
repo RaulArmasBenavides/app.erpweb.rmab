@@ -1,17 +1,17 @@
 ﻿using app.erpweb.rmab.Entity;
-using app.erpweb.rmab.Service;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using app.erpweb.rmab.Service;
 
 namespace app.erpweb.rmab.Models
 {
-    public class ProductoDao : ICrudDao<Producto>
+    public class ProductoDao : IProductoDataAccess 
     {
+        public ProductoDao()
+        {
+
+        }
         //variables       
         SqlCommand cmd = null;
         public void create(Producto t, SqlConnection cn)
