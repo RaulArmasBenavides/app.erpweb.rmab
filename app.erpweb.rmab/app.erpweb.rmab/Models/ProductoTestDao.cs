@@ -11,27 +11,27 @@ namespace app.erpweb.rmab.Models
 {
     public class ProductoTestDao : IProductoDataAccess
     {
-        public void create(Producto t, SqlConnection cn)
+        public void create(Producto t)
         {
             throw new NotImplementedException();
         }
 
-        public void delete(Producto t, SqlConnection cn)
+        public void delete(Producto t)
         {
             throw new NotImplementedException();
         }
 
-        public Producto findForId(Producto t, SqlConnection cn)
+        public Producto findForId(Producto t)
         {
             throw new NotImplementedException();
         }
 
-        public List<Producto> readAll(SqlConnection cn)
+        public List<Producto> readAll()
         {
             throw new NotImplementedException();
         }
 
-        public void update(Producto t, SqlConnection cn)
+        public void update(Producto t)
         {
             throw new NotImplementedException();
         }

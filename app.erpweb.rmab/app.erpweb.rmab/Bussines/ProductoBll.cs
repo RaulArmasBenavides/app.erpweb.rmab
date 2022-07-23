@@ -12,130 +12,95 @@ using app.erpweb.rmab.Service;
 
 namespace app.erpweb.rmab.Bussines
 {
-    public class ProductoBll : AccesoDB
+    public class ProductoBll
     {
-       
-       IProductoDataAccess _ProductDataAccess;
-
-
+        private readonly IProductoDataAccess _ProductDataAccess;
+        
         public ProductoBll()
         {
-            _ProductDataAccess = DataAccessFactory.GetProductDataAccessObj2();
+            _ProductDataAccess = DataAccessFactory.GetProductDataAccessObj();
         }
 
-
-        public List<Producto> ProductoListar2()
+        public List<Producto> ProductoListar()
         {
-
-            using (var cn = new SqlConnection(CadenaConexion))
-            {
-                ProductoDao dao = null;
                 try
                 {
-                    dao = new ProductoDao();
-                    cn.Open();
-                    return _ProductDataAccess.readAll(cn);
+                    return _ProductDataAccess.readAll();
                 }
                 catch (Exception ex)
                 {
                     throw ex;
                 }
-            }//cn.close()
-        
         }
 
-       public List<Producto> ProductoListar()
-        {
-            List<Producto> lista = null;
-            using (var cn=new SqlConnection(CadenaConexion) )
-            {
-                ProductoDao dao = null;
-                try
-                {
-                    dao = new ProductoDao();
-                    cn.Open();
-                    lista = dao.readAll(cn);
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-            }//cn.close()
-            return lista;
-        }
+       //public List<Producto> ProductoListar()
+       // {
+       //     List<Producto> lista = null;
+       //     using (var cn=new SqlConnection(CadenaConexion) )
+       //     {
+       //         ProductoDao dao = null;
+       //         try
+       //         {
+       //             dao = new ProductoDao();
+       //             cn.Open();
+       //             lista = dao.readAll(cn);
+       //         }
+       //         catch (Exception ex)
+       //         {
+       //             throw ex;
+       //         }
+       //     }//cn.close()
+       //     return lista;
+       // }
 
         public Producto ProductoConsultar(Producto p)
         {
             Producto pro = null;
-            using (var cn = new SqlConnection(CadenaConexion))
-            {
-                ProductoDao dao = null;
-                try
-                {
-                    dao = new ProductoDao();
-                    cn.Open();
-                    pro = dao.findForId(p, cn);
-                }
-                catch (Exception ex)
-                {
+             try
+             {
+                pro = _ProductDataAccess.findForId(p);
+             }
+             catch (Exception ex)
+             {
                     throw ex;
-                }
-            }//cn.close()
+             }
             return pro;
         }
 
         public void ProductoAdicionar(Producto p)
         {
-           using (var cn = new SqlConnection(CadenaConexion))
-            {
-                ProductoDao dao = null;
                 try
                 {
-                    dao = new ProductoDao();
-                    cn.Open();
-                    dao.create(p, cn);
+                    _ProductDataAccess.create(p);
                 }
                 catch (Exception ex)
                 {
                     throw ex;
-                }
-            }//cn.close()            
+                }       
         }
 
         public void ProductoActualizar(Producto p)
         {
-            using (var cn = new SqlConnection(CadenaConexion))
-            {
-                ProductoDao dao = null;
                 try
                 {
-                    dao = new ProductoDao();
-                    cn.Open();
-                    dao.update(p, cn);
+                 _ProductDataAccess.update(p);
                 }
                 catch (Exception ex)
                 {
                     throw ex;
                 }
-            }//cn.close()            
         }
 
         public void ProductoEliminar(Producto p)
         {
-            using (var cn = new SqlConnection(CadenaConexion))
-            {
-                ProductoDao dao = null;
                 try
                 {
-                    dao = new ProductoDao();
-                    cn.Open();
-                    dao.delete(p, cn);
+                    _ProductDataAccess.delete(p);
                 }
                 catch (Exception ex)
                 {
                     throw ex;
-                }
-            }//cn.close()            
+                }         
         }
 
 

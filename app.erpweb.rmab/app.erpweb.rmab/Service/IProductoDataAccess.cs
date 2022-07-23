@@ -11,10 +11,10 @@ namespace app.erpweb.rmab.Service
     public interface IProductoDataAccess
     {
         //definir las firmas
-        void create(Producto t, SqlConnection cn);
-        void update(Producto t, SqlConnection cn);
-        void delete(Producto t, SqlConnection cn);
-        Producto findForId(Producto t, SqlConnection cn);
-        List<Producto> readAll(SqlConnection cn);
+        void create(Producto t);
+        void update(Producto t);
+        void delete(Producto t);
+        Producto findForId(Producto t);
+        List<Producto> readAll();
     }
 }

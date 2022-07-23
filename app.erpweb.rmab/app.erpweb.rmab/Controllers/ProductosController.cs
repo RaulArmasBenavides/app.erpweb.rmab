@@ -11,7 +11,7 @@ namespace app.erpweb.rmab.Controllers
     public class ProductosController : Controller
     {
         //instanciar objeto de la clase ProductoBll
-        ProductoBll obj = new ProductoBll();
+        readonly ProductoBll obj = new ProductoBll();
 
         // GET: Productos
         public ActionResult Index()
@@ -22,8 +22,10 @@ namespace app.erpweb.rmab.Controllers
         // GET: Productos/Details/5
         public ActionResult Details(int id)
         {
-            Producto pro = new Producto();
-            pro.IdProducto = id;
+            Producto pro = new Producto
+            {
+                IdProducto = id
+            };
             return View(obj.ProductoConsultar(pro));
         }
 
@@ -56,8 +58,10 @@ namespace app.erpweb.rmab.Controllers
         // GET: Productos/Edit/5
         public ActionResult Edit(int id)
         {
-            Producto pro = new Producto();
-            pro.IdProducto = id;
+            Producto pro = new Producto
+            {
+                IdProducto = id
+            };
             return View(obj.ProductoConsultar(pro));
         }
 
@@ -84,8 +88,10 @@ namespace app.erpweb.rmab.Controllers
         // GET: Productos/Delete/5
         public ActionResult Delete(int id)
         {
-            Producto pro = new Producto();
-            pro.IdProducto = id;
+            Producto pro = new Producto
+            {
+                IdProducto = id
+            };
             return View(obj.ProductoConsultar(pro));
         }
 
@@ -96,8 +102,10 @@ namespace app.erpweb.rmab.Controllers
             try
             {
                 // TODO: Add delete logic here
-                Producto pro = new Producto();
-                pro.IdProducto = id;
+                Producto pro = new Producto
+                {
+                    IdProducto = id
+                };
                 if (ModelState.IsValid)
                 {
                     obj.ProductoEliminar(pro);

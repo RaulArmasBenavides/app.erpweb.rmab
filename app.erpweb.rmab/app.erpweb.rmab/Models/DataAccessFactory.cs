@@ -6,7 +6,7 @@ using System.Web;
 
 namespace app.erpweb.rmab.Models
 {
-    public class DataAccessFactory
+    abstract class DataAccessFactory
     {
         public static IProductoDataAccess GetProductDataAccessObj()
         {
@@ -15,7 +15,7 @@ namespace app.erpweb.rmab.Models
 
         public static IProductoDataAccess GetProductDataAccessObj2()
         {
-            return new ProductoDao();
+            return new ProductoTestDao();
         }
     }
 }

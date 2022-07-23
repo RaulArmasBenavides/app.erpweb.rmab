@@ -1,17 +1,20 @@
 ﻿
 using System.Configuration;
+using app.erpweb.rmab.Entity;
+using app.erpweb.rmab.Service;
 
 namespace app.erpweb.rmab.DataBase
 {
-    public class AccesoDB
-    {
-        //propiedad
-        public string CadenaConexion { get; set; }
-
+    public class AccesoDB : IDBConnection
+    {   
         //constructor
         public AccesoDB()
         {
-            CadenaConexion = ConfigurationManager.ConnectionStrings["neptuno"].ConnectionString;
+        }
+
+        public void test(Producto t)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
